@@ -120,3 +120,4 @@ struktur-atom-interaktif/
     ├── bohr_energy_shells.jpg      # Diagram tingkat energi kulit Bohr & emisi foton
     └── quantum_orbitals.jpg        # Diagram bentuk orbital s & p mekanika kuantum
 ```
+# struktur_atom
