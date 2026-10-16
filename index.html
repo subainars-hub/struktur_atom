@@ -1,0 +1,1544 @@
+<!DOCTYPE html>
+<html lang="id" data-theme="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ATOMIKA X - Media Interaktif Pembelajaran Kimia Struktur Atom Kelas X SMA</title>
+  <meta name="description" content="Media pembelajaran interaktif modern mata pelajaran Kimia SMA Kelas X materi Struktur Atom. Dilengkapi modul teori perkembangan model atom, partikel dasar, notasi atom, konfigurasi elektron, video edukasi, lab simulator, games arcade, kuis berhadiah, dan sertifikat kelulusan digital.">
+
+  <!-- Google Fonts: Outfit, Plus Jakarta Sans, JetBrains Mono -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;600;800&family=Outfit:wght@400;600;700;800;900&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <!-- CSS Stylesheets -->
+  <link rel="stylesheet" href="css/main.css">
+  <link rel="stylesheet" href="css/components.css">
+  <link rel="stylesheet" href="css/navbar.css">
+  <link rel="stylesheet" href="css/hero.css">
+  <link rel="stylesheet" href="css/materi.css">
+  <link rel="stylesheet" href="css/games.css">
+  <link rel="stylesheet" href="css/video.css">
+  <link rel="stylesheet" href="css/kuis.css">
+</head>
+<body>
+
+  <!-- ==========================================
+       HEADER & NAVIGATION BAR
+       ========================================== -->
+  <header class="header-navbar">
+    <div class="container nav-container">
+      <!-- Brand Logo -->
+      <a href="#hero" class="nav-brand" id="brandLogo">
+        <div class="brand-icon">⚛️</div>
+        <div class="brand-text">
+          <div class="brand-title">ATOMIKA <span>X</span></div>
+          <div class="brand-subtitle">KIMIA KELAS X SMA</div>
+        </div>
+      </a>
+
+      <!-- Navigation Links -->
+      <nav>
+        <ul class="nav-menu" id="navMenu">
+          <li><a href="#hero" class="nav-link active" id="navHero">🏠 Beranda</a></li>
+          <li><a href="#materi" class="nav-link" id="navMateri">📚 Materi Pembelajaran</a></li>
+          <li><a href="#games" class="nav-link" id="navGames">🎮 Zona Games</a></li>
+          <li><a href="#video" class="nav-link" id="navVideo">🎬 Video Edukasi</a></li>
+          <li><a href="#kuis" class="nav-link" id="navKuis">🏆 Kuis & Sertifikat</a></li>
+        </ul>
+      </nav>
+
+      <!-- Action Buttons -->
+      <div class="nav-actions">
+        <button class="audio-toggle-btn" id="audioToggleBtn" title="Pengaturan Suara">🔊</button>
+        <button class="theme-toggle-btn" id="themeToggleBtn" title="Ganti Tema">☀️</button>
+        <a href="#games" class="btn btn-primary btn-sm" id="btnNavMainLab">Lab Atom 🔬</a>
+        <button class="mobile-nav-toggle" id="mobileNavToggle" aria-label="Menu Navigasi">☰</button>
+      </div>
+    </div>
+  </header>
+
+  <!-- ==========================================
+       HERO SECTION WITH 3D ATOM CANVAS
+       ========================================== -->
+  <section class="hero-section" id="hero">
+    <div class="container">
+      <div class="hero-grid">
+        <!-- Hero Text Content -->
+        <div class="hero-content">
+          <div class="hero-badge-wrap">
+            <span class="hero-pill">
+              <span class="hero-pill-dot"></span>
+              Kurikulum Merdeka & K-13 Kimia Fase E
+            </span>
+          </div>
+          <h1 class="hero-title">
+            Jelajahi Misteri Dunia <span class="gradient-text">Subatomik</span> Secara Interaktif
+          </h1>
+          <p class="hero-description">
+            Selamat datang di laboratorium digital <strong>ATOMIKA X</strong>! Pelajari rahasia perkembangan model atom, partikel penyusun, notasi nuklida, dan konfigurasi elektron lewat visualisasi 3D langsung, simulator PhET, mini-games menantang, serta uji kompetensi bersertifikat.
+          </p>
+          <div class="hero-actions">
+            <a href="#materi" class="btn btn-primary btn-lg" id="btnHeroMateri">
+              Mulai Belajar 📚
+            </a>
+            <a href="#games" class="btn btn-secondary btn-lg" id="btnHeroGames">
+              Coba Simulator Atom 🎮
+            </a>
+          </div>
+
+          <!-- Quick Stats Counter -->
+          <div class="hero-stats-grid">
+            <div class="stat-item">
+              <span class="stat-num cyan">5</span>
+              <span class="stat-label">Model Atom 3D</span>
+            </div>
+            <div class="stat-item">
+              <span class="stat-num purple">3</span>
+              <span class="stat-label">Mini-Games Lab</span>
+            </div>
+            <div class="stat-item">
+              <span class="stat-num amber">36</span>
+              <span class="stat-label">Unsur Interaktif</span>
+            </div>
+            <div class="stat-item">
+              <span class="stat-num emerald">15</span>
+              <span class="stat-label">Soal Uji Kuis</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Hero 3D Atom Canvas Showcase -->
+        <div class="hero-visual-wrapper">
+          <div class="hero-atom-card">
+            <div class="atom-card-header">
+              <div class="atom-live-status">
+                <span class="hero-pill-dot"></span>
+                Model Bohr Terkuantisasi (3D)
+              </div>
+            </div>
+            <canvas id="heroAtomCanvas" class="atom-canvas"></canvas>
+            <div class="atom-card-footer">
+              <span class="atom-model-hint">💡 Putar 3D dengan kursor & klik untuk eksitasi!</span>
+              <button class="atom-excite-btn" id="btnHeroExcite">Eksitasi Foton ⚡</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==========================================
+       SECTION: MATERI PEMBELAJARAN INTERAKTIF
+       ========================================== -->
+  <section class="materi-section" id="materi">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag">Modul Teori & Konsep</span>
+        <h2 class="section-title">
+          Materi Lengkap <span class="gradient-text">Struktur Atom</span> Kelas X
+        </h2>
+        <p class="section-desc">
+          Pelajari konsep fundamental struktur atom secara komprehensif mulai dari sejarah penemuan oleh para ilmuwan dunia hingga konfigurasi elektron modern.
+        </p>
+      </div>
+
+      <!-- Materi Sub-Tabs Navigation -->
+      <div class="materi-nav-wrapper">
+        <div class="tabs-container">
+          <button class="tab-btn materi-tab-btn active" data-tab="model-atom" id="tabBtnModelAtom">
+            ⚛️ Perkembangan Model Atom
+          </button>
+          <button class="tab-btn materi-tab-btn" data-tab="partikel" id="tabBtnPartikel">
+            🔬 Partikel Dasar (p, e, n)
+          </button>
+          <button class="tab-btn materi-tab-btn" data-tab="notasi" id="tabBtnNotasi">
+            🏷️ Notasi & Nuklida
+          </button>
+          <button class="tab-btn materi-tab-btn" data-tab="isotop" id="tabBtnIsotop">
+            ⚖️ Isotop, Isobar, Isoton & Isoelektron
+          </button>
+          <button class="tab-btn materi-tab-btn" data-tab="konfigurasi" id="tabBtnKonfigurasi">
+            ⚡ Konfigurasi Elektron
+          </button>
+        </div>
+      </div>
+
+      <!-- TAB 1: PERKEMBANGAN MODEL ATOM -->
+      <div class="materi-tab-content active" id="materi-model-atom">
+        <!-- Model Selection Pills -->
+        <div class="timeline-models">
+          <div class="model-pill-card active" data-model="dalton" id="pillDalton">
+            <div class="model-year">1803</div>
+            <div class="model-name">John Dalton</div>
+            <div class="model-title-sub">Bola Pejal</div>
+          </div>
+          <div class="model-pill-card" data-model="thomson" id="pillThomson">
+            <div class="model-year">1897</div>
+            <div class="model-name">J.J. Thomson</div>
+            <div class="model-title-sub">Roti Kismis</div>
+          </div>
+          <div class="model-pill-card" data-model="rutherford" id="pillRutherford">
+            <div class="model-year">1911</div>
+            <div class="model-name">E. Rutherford</div>
+            <div class="model-title-sub">Inti Atom</div>
+          </div>
+          <div class="model-pill-card" data-model="bohr" id="pillBohr">
+            <div class="model-year">1913</div>
+            <div class="model-name">Niels Bohr</div>
+            <div class="model-title-sub">Kulit Energi</div>
+          </div>
+          <div class="model-pill-card" data-model="quantum" id="pillQuantum">
+            <div class="model-year">1926</div>
+            <div class="model-name">Mekanika Kuantum</div>
+            <div class="model-title-sub">Awan Orbital</div>
+          </div>
+        </div>
+
+        <!-- Active Model Detail Stage (Canvas + Postulates + Pros/Cons) -->
+        <div class="model-detail-stage">
+          <div class="model-stage-visual">
+            <canvas id="modelInteractiveCanvas" class="model-interactive-canvas"></canvas>
+          </div>
+          <div class="model-stage-info">
+            <div class="model-info-header">
+              <span class="badge badge-cyan model-info-badge" id="modelStageYear">Tahun 1803</span>
+              <h3 class="model-info-title" id="modelStageTitle">John Dalton</h3>
+              <div class="model-info-analogy" id="modelStageAnalogy">Analogi: Bola Biliar / Kelereng Pejal</div>
+            </div>
+
+            <h4 style="font-size: 1.05rem; margin-bottom: 8px; color: var(--text-primary);">Postulat & Teori Kunci:</h4>
+            <ul class="model-postulates-list" id="modelPostulatesList">
+              <!-- Dynamically populated via JS -->
+            </ul>
+
+            <div class="model-pros-cons">
+              <div class="pros-box">
+                <h4>✓ Kelebihan Model</h4>
+                <div id="modelProsList"></div>
+              </div>
+              <div class="cons-box">
+                <h4>✗ Kelemahan / Batasan</h4>
+                <div id="modelConsList"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Infographic Visual Overview -->
+        <div class="infographic-banner-card">
+          <img src="assets/model_atom_history.jpg" alt="Evolusi Model Atom Kimia Kelas X: Dalton, Thomson, Rutherford, Bohr, Mekanika Kuantum" loading="lazy">
+          <div class="infographic-caption">
+            <span><strong>Infografis Komprehensif:</strong> Garis Waktu & Perbandingan Karakteristik Kelima Model Atom</span>
+            <span class="badge badge-purple">Diagram Pembelajaran</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- TAB 2: PARTIKEL DASAR PENYUSUN ATOM -->
+      <div class="materi-tab-content" id="materi-partikel">
+        <div class="particles-grid">
+          <!-- Proton Card -->
+          <div class="particle-card proton">
+            <div class="particle-icon-bubble">p⁺</div>
+            <h3 style="font-size: 1.4rem; font-weight: 800; margin-bottom: 6px;">Proton</h3>
+            <p style="font-size: 0.9rem; color: var(--text-secondary); margin-bottom: 14px;">
+              Partikel pembawa muatan positif yang berada di dalam inti atom (nukleus). Menentukan identitas nomor atom suatu unsur.
+            </p>
+            <table class="particle-data-table">
+              <tr><td>Muatan Relatif</td><td>+1</td></tr>
+              <tr><td>Muatan Coulomb</td><td>+1,602 × 10⁻¹⁹ C</td></tr>
+              <tr><td>Massa Relatif</td><td>1,0073 sma (~1 sma)</td></tr>
+              <tr><td>Massa Sebenarnya</td><td>1,673 × 10⁻²⁷ kg</td></tr>
+              <tr><td>Penemu (Tahun)</td><td>E. Goldstein (1886)</td></tr>
+              <tr><td>Eksperimen</td><td>Tabung Sinar Saluran (Anoda)</td></tr>
+            </table>
+          </div>
+
+          <!-- Neutron Card -->
+          <div class="particle-card neutron">
+            <div class="particle-icon-bubble">n⁰</div>
+            <h3 style="font-size: 1.4rem; font-weight: 800; margin-bottom: 6px;">Neutron</h3>
+            <p style="font-size: 0.9rem; color: var(--text-secondary); margin-bottom: 14px;">
+              Partikel netral (tanpa muatan listrik) yang menstabilkan proton-proton di dalam inti atom dari gaya tolak-menolak elektrostatik.
+            </p>
+            <table class="particle-data-table">
+              <tr><td>Muatan Relatif</td><td>0 (Netral)</td></tr>
+              <tr><td>Muatan Coulomb</td><td>0 Coulomb</td></tr>
+              <tr><td>Massa Relatif</td><td>1,0087 sma (~1 sma)</td></tr>
+              <tr><td>Massa Sebenarnya</td><td>1,675 × 10⁻²⁷ kg</td></tr>
+              <tr><td>Penemu (Tahun)</td><td>James Chadwick (1932)</td></tr>
+              <tr><td>Eksperimen</td><td>Penembakan Lempeng Berilium</td></tr>
+            </table>
+          </div>
+
+          <!-- Elektron Card -->
+          <div class="particle-card electron">
+            <div class="particle-icon-bubble">e⁻</div>
+            <h3 style="font-size: 1.4rem; font-weight: 800; margin-bottom: 6px;">Elektron</h3>
+            <p style="font-size: 0.9rem; color: var(--text-secondary); margin-bottom: 14px;">
+              Partikel bermuatan negatif yang mengitari inti atom pada orbital kulit. Berperan utama dalam pembentukan ikatan kimia.
+            </p>
+            <table class="particle-data-table">
+              <tr><td>Muatan Relatif</td><td>-1</td></tr>
+              <tr><td>Muatan Coulomb</td><td>-1,602 × 10⁻¹⁹ C</td></tr>
+              <tr><td>Massa Relatif</td><td>0,00055 sma (~1/1836 p)</td></tr>
+              <tr><td>Massa Sebenarnya</td><td>9,109 × 10⁻³¹ kg</td></tr>
+              <tr><td>Penemu (Tahun)</td><td>J.J. Thomson (1897)</td></tr>
+              <tr><td>Eksperimen</td><td>Tabung Sinar Katoda (Crookes)</td></tr>
+            </table>
+          </div>
+        </div>
+
+        <!-- Rutherford Gold Foil Experiment Banner -->
+        <div class="infographic-banner-card">
+          <img src="assets/rutherford_gold_foil.jpg" alt="Eksperimen Hamburan Sinar Alfa Lempeng Emas Rutherford" loading="lazy">
+          <div class="infographic-caption">
+            <span><strong>Eksperimen Bersejarah:</strong> Hamburan Sinar Alfa Rutherford membuktikan sebagian besar atom adalah ruang hampa dengan inti padat di tengah.</span>
+            <span class="badge badge-emerald">Eksperimen Rutherford</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- TAB 3: NOTASI ATOM, KATION, ANION, ISOTOP, ISOBAR, ISOTON -->
+      <div class="materi-tab-content" id="materi-notasi">
+        <!-- Interactive Nuclide Calculator Card -->
+        <div class="calc-nuclide-card">
+          <div class="nuclide-calc-grid">
+            <!-- Visual Symbol Display -->
+            <div class="nuclide-visual-symbol">
+              <div class="nuclide-stack">
+                <span class="nuclide-mass-val" id="calcResMass" title="Nomor Massa (A = p + n)">23</span>
+                <span class="nuclide-atomic-val" id="calcResAtomic" title="Nomor Atom (Z = p)">11</span>
+              </div>
+              <span class="nuclide-element-symbol" id="calcResSymbol">Na</span>
+              <span class="nuclide-charge-val" id="calcResCharge" title="Muatan Ion">+</span>
+            </div>
+
+            <!-- Inputs & Breakdown -->
+            <div class="nuclide-inputs-wrap">
+              <h3 style="font-size: 1.35rem; font-weight: 800; color: #fff;">
+                Kalkulator Interaktif Notasi Atom & Ion
+              </h3>
+              <p style="font-size: 0.9rem; color: var(--text-secondary);">
+                Pilih unsur dan muatan untuk melihat penguraian jumlah proton, elektron, dan neutron secara otomatis.
+              </p>
+
+              <div class="input-field-group">
+                <label for="nuclideElementSelect">Pilih Unsur Kimia:</label>
+                <select id="nuclideElementSelect">
+                  <!-- Populated dynamically via JS -->
+                </select>
+              </div>
+
+              <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 12px;">
+                <div class="input-field-group">
+                  <label for="calcMassInput">Nomor Massa (A):</label>
+                  <input type="number" id="calcMassInput" value="23" min="1" max="100">
+                </div>
+                <div class="input-field-group">
+                  <label for="calcChargeSelect">Muatan Spesi:</label>
+                  <select id="calcChargeSelect">
+                    <option value="0">Netral (0)</option>
+                    <option value="1" selected>Kation (+1)</option>
+                    <option value="2">Kation (+2)</option>
+                    <option value="3">Kation (+3)</option>
+                    <option value="-1">Anion (-1)</option>
+                    <option value="-2">Anion (-2)</option>
+                    <option value="-3">Anion (-3)</option>
+                  </select>
+                </div>
+              </div>
+
+              <!-- Output Results -->
+              <div class="nuclide-results-row">
+                <div class="nuclide-res-card">
+                  <div class="nuclide-res-num" style="color: var(--color-proton);" id="calcOutProtons">11</div>
+                  <div class="nuclide-res-label">Proton (p) = Z</div>
+                </div>
+                <div class="nuclide-res-card">
+                  <div class="nuclide-res-num" style="color: var(--color-neutron);" id="calcOutNeutrons">12</div>
+                  <div class="nuclide-res-label">Neutron (n) = A - Z</div>
+                </div>
+                <div class="nuclide-res-card">
+                  <div class="nuclide-res-num" style="color: var(--color-electron);" id="calcOutElectrons">10</div>
+                  <div class="nuclide-res-label">Elektron (e) = Z - q</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Concept Cards: Isotop, Isobar, Isoton, Isoelektron -->
+        <div class="iso-concept-grid">
+          <div class="iso-card">
+            <h3 class="iso-card-title">
+              <span>Isotop</span>
+              <span class="badge badge-cyan">P Sama</span>
+            </h3>
+            <span class="iso-mnemonic top">Mnemonic: Akhiran P = Proton Sama</span>
+            <p style="font-size: 0.9rem; color: var(--text-secondary); margin-bottom: 12px;">
+              Atom-atom dari unsur yang sama (Nomor atom Z sama), namun memiliki nomor massa A berbeda karena perbedaan jumlah neutron.
+            </p>
+            <div class="iso-examples-list">
+              <div class="iso-example-pill"><span>¹²₆C dan ¹⁴₆C</span> <span style="color:var(--neon-cyan)">Z = 6</span></div>
+              <div class="iso-example-pill"><span>³⁵₁₇Cl dan ³⁷₁₇Cl</span> <span style="color:var(--neon-cyan)">Z = 17</span></div>
+            </div>
+          </div>
+
+          <div class="iso-card">
+            <h3 class="iso-card-title">
+              <span>Isobar</span>
+              <span class="badge badge-purple">Massa Sama</span>
+            </h3>
+            <span class="iso-mnemonic bar">Mnemonic: BAR = Berat / Massa Sama</span>
+            <p style="font-size: 0.9rem; color: var(--text-secondary); margin-bottom: 12px;">
+              Atom-atom dari unsur yang berbeda (Z berbeda), namun memiliki NOMOR MASSA (A) yang sama persis.
+            </p>
+            <div class="iso-examples-list">
+              <div class="iso-example-pill"><span>¹⁴₆C dan ¹⁴₇N</span> <span style="color:var(--neon-purple)">A = 14</span></div>
+              <div class="iso-example-pill"><span>⁴⁰₁₉K dan ⁴⁰₂₀Ca</span> <span style="color:var(--neon-purple)">A = 40</span></div>
+            </div>
+          </div>
+
+          <div class="iso-card">
+            <h3 class="iso-card-title">
+              <span>Isoton</span>
+              <span class="badge badge-amber">Neutron Sama</span>
+            </h3>
+            <span class="iso-mnemonic ton">Mnemonic: Akhiran N = Neutron Sama</span>
+            <p style="font-size: 0.9rem; color: var(--text-secondary); margin-bottom: 12px;">
+              Atom-atom dari unsur berbeda yang memiliki JUMLAH NEUTRON (A - Z) sama persis.
+            </p>
+            <div class="iso-examples-list">
+              <div class="iso-example-pill"><span>¹⁴₆C dan ¹⁶₈O</span> <span style="color:var(--neon-amber)">n = 8</span></div>
+              <div class="iso-example-pill"><span>³¹₁₅P dan ³²₁₆S</span> <span style="color:var(--neon-amber)">n = 16</span></div>
+            </div>
+          </div>
+
+          <div class="iso-card">
+            <h3 class="iso-card-title">
+              <span>Isoelektron</span>
+              <span class="badge badge-emerald">e⁻ Sama</span>
+            </h3>
+            <span class="iso-mnemonic elektron">Mnemonic: ELEKTRON = Jumlah e⁻ Sama</span>
+            <p style="font-size: 0.9rem; color: var(--text-secondary); margin-bottom: 12px;">
+              Spesi-spesi (atom netral maupun ion) yang memiliki JUMLAH ELEKTRON (Z - q) dan konfigurasi elektron sama persis.
+            </p>
+            <div class="iso-examples-list">
+              <div class="iso-example-pill"><span>₁₁Na⁺ dan ₁₀Ne</span> <span style="color:var(--neon-emerald)">e = 10</span></div>
+              <div class="iso-example-pill"><span>₉F⁻ dan ₁₂Mg²⁺</span> <span style="color:var(--neon-emerald)">e = 10</span></div>
+            </div>
+          </div>
+        </div>
+
+        <!-- CTA Banner: Jump to Full Iso Lab Tab -->
+        <div class="iso-cta-banner">
+          <div class="iso-cta-left">
+            <div class="iso-cta-icon">⚖️</div>
+            <div>
+              <h4 class="iso-cta-title">Ingin Pelajari & Uji Pasangan Spesi Lebih Mendalam?</h4>
+              <p class="iso-cta-desc">
+                Buka tab khusus <strong>Isotop, Isobar, Isoton & Isoelektron</strong> untuk mengakses Laboratorium Komparator Spesi interaktif, Tabel Karakteristik Lengkap, Analisis Deret Isoelektronik, dan Kuis Kilat Mandiri!
+              </p>
+            </div>
+          </div>
+          <button class="btn btn-cyan" id="btnGoToIsotopTab">
+            Buka Modul & Lab Lengkap ➔
+          </button>
+        </div>
+      </div>
+
+      <!-- ==========================================
+           TAB 4: ISOTOP, ISOBAR, ISOTON, DAN ISOELEKTRON
+           ========================================== -->
+      <div class="materi-tab-content" id="materi-isotop">
+        <!-- Module Header Banner -->
+        <div class="iso-hero-banner">
+          <div class="iso-hero-badge">
+            <span class="badge badge-purple">Modul Khusus Hubungan Nuklida SMA Kelas X</span>
+            <span class="badge badge-cyan">Konsep Fundamental Kimia</span>
+          </div>
+          <h3 class="iso-hero-title">
+            Karakteristik & Hubungan Antar Nuklida: <br>
+            <span class="gradient-text">Isotop, Isobar, Isoton & Isoelektron</span>
+          </h3>
+          <p class="iso-hero-desc">
+            Dalam ilmu kimia, atom dan ion dikelompokkan ke dalam 4 hubungan fundamental berdasarkan kesamaan jumlah partikel subatomik (proton, neutron, elektron) serta nomor massanya. Pelajari rumus cepat, analisis deret isoelektronik, hingga uji pasangan langsung di laboratorium komparator interaktif!
+          </p>
+        </div>
+
+        <!-- 4 Glowing Mnemonic Highlight Cards -->
+        <div class="iso-mnemonic-deck">
+          <!-- ISOTOP -->
+          <div class="iso-mnemonic-card card-isotop">
+            <div class="iso-mnemonic-head">
+              <span class="iso-letter-pill pill-cyan">P</span>
+              <div>
+                <h4 class="iso-mnemonic-name">ISOTO<span class="hl-cyan">P</span></h4>
+                <div class="iso-mnemonic-sub">Huruf Akhir <strong>P</strong> = Proton Sama</div>
+              </div>
+            </div>
+            <div class="iso-rule-badge">Unsur SAMA (Z Sama), Massa (A) Beda</div>
+            <p class="iso-mnemonic-text">
+              Atom-atom dari <strong>unsur kimia yang sama</strong> (memiliki nomor atom Z identik), tetapi nomor massa A berbeda karena perbedaan jumlah neutron di inti.
+            </p>
+            <div class="iso-formula-box">
+              <span class="formula-label">Rumus Penentu:</span>
+              <code>Z₁ = Z₂  dan  A₁ ≠ A₂</code>
+            </div>
+            <div class="iso-mini-examples">
+              <div class="iso-mini-pill"><span>¹²₆C & ¹⁴₆C</span> <span class="pill-tag" style="color:var(--neon-cyan)">Z = 6</span></div>
+              <div class="iso-mini-pill"><span>³⁵₁₇Cl & ³⁷₁₇Cl</span> <span class="pill-tag" style="color:var(--neon-cyan)">Z = 17</span></div>
+            </div>
+          </div>
+
+          <!-- ISOBAR -->
+          <div class="iso-mnemonic-card card-isobar">
+            <div class="iso-mnemonic-head">
+              <span class="iso-letter-pill pill-purple">BAR</span>
+              <div>
+                <h4 class="iso-mnemonic-name">ISO<span class="hl-purple">BAR</span></h4>
+                <div class="iso-mnemonic-sub">Suku Kata <strong>BAR</strong> = Berat (A) Sama</div>
+              </div>
+            </div>
+            <div class="iso-rule-badge">Unsur BEDA (Z Beda), Massa (A) SAMA</div>
+            <p class="iso-mnemonic-text">
+              Atom-atom dari <strong>unsur kimia yang berbeda</strong> (Z berbeda), namun secara kebetulan memiliki <strong>nomor massa (A) yang sama persis</strong>.
+            </p>
+            <div class="iso-formula-box">
+              <span class="formula-label">Rumus Penentu:</span>
+              <code>A₁ = A₂  dan  Z₁ ≠ Z₂</code>
+            </div>
+            <div class="iso-mini-examples">
+              <div class="iso-mini-pill"><span>¹⁴₆C & ¹⁴₇N</span> <span class="pill-tag" style="color:var(--neon-purple)">A = 14</span></div>
+              <div class="iso-mini-pill"><span>⁴⁰₁₉K & ⁴⁰₂₀Ca</span> <span class="pill-tag" style="color:var(--neon-purple)">A = 40</span></div>
+            </div>
+          </div>
+
+          <!-- ISOTON -->
+          <div class="iso-mnemonic-card card-isoton">
+            <div class="iso-mnemonic-head">
+              <span class="iso-letter-pill pill-amber">N</span>
+              <div>
+                <h4 class="iso-mnemonic-name">ISOTO<span class="hl-amber">N</span></h4>
+                <div class="iso-mnemonic-sub">Huruf Akhir <strong>N</strong> = Neutron Sama</div>
+              </div>
+            </div>
+            <div class="iso-rule-badge">Unsur BEDA, Jumlah Neutron (A - Z) SAMA</div>
+            <p class="iso-mnemonic-text">
+              Atom-atom dari <strong>unsur yang berbeda</strong> yang memiliki <strong>jumlah neutron (n = A - Z) sama persis</strong> di dalam inti atomnya.
+            </p>
+            <div class="iso-formula-box">
+              <span class="formula-label">Rumus Penentu:</span>
+              <code>n₁ = (A₁ - Z₁) = (A₂ - Z₂) = n₂</code>
+            </div>
+            <div class="iso-mini-examples">
+              <div class="iso-mini-pill"><span>¹⁴₆C & ¹⁶₈O</span> <span class="pill-tag" style="color:var(--neon-amber)">n = 8</span></div>
+              <div class="iso-mini-pill"><span>³¹₁₅P & ³²₁₆S</span> <span class="pill-tag" style="color:var(--neon-amber)">n = 16</span></div>
+            </div>
+          </div>
+
+          <!-- ISOELEKTRON -->
+          <div class="iso-mnemonic-card card-isoelektron">
+            <div class="iso-mnemonic-head">
+              <span class="iso-letter-pill pill-emerald">e⁻</span>
+              <div>
+                <h4 class="iso-mnemonic-name">ISO<span class="hl-emerald">ELEKTRON</span></h4>
+                <div class="iso-mnemonic-sub">Kata Kunci <strong>ELEKTRON</strong> = Total e⁻ Sama</div>
+              </div>
+            </div>
+            <div class="iso-rule-badge">Spesi BEDA/SAMA, Jumlah Elektron (Z - q) SAMA</div>
+            <p class="iso-mnemonic-text">
+              Spesi-spesi kimia (dapat berupa <strong>atom netral maupun ion positif/negatif</strong>) yang memiliki <strong>jumlah total elektron yang sama persis</strong>.
+            </p>
+            <div class="iso-formula-box">
+              <span class="formula-label">Rumus Penentu:</span>
+              <code>e₁ = (Z₁ - q₁) = (Z₂ - q₂) = e₂</code>
+            </div>
+            <div class="iso-mini-examples">
+              <div class="iso-mini-pill"><span>₁₁Na⁺ & ₁₀Ne</span> <span class="pill-tag" style="color:var(--neon-emerald)">e = 10</span></div>
+              <div class="iso-mini-pill"><span>₉F⁻ & ₁₂Mg²⁺</span> <span class="pill-tag" style="color:var(--neon-emerald)">e = 10</span></div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Master Comparison Matrix Table -->
+        <div class="iso-table-section">
+          <div class="iso-section-heading">
+            <span class="badge badge-cyan">Matriks Komparasi</span>
+            <h4 style="font-size: 1.4rem; font-weight: 800; color: #fff; margin-top: 6px;">
+              Tabel Perbandingan Lengkap Karakteristik Keempat Konsep
+            </h4>
+            <p style="font-size: 0.92rem; color: var(--text-secondary);">
+              Ringkasan komprehensif untuk memudahkan pemahaman cepat dan hafalan persiapan ujian sekolah maupun UTBK SNBT.
+            </p>
+          </div>
+
+          <div class="iso-table-wrap">
+            <table class="iso-matrix-table">
+              <thead>
+                <tr>
+                  <th>Konsep Hubungan</th>
+                  <th>Mnemonic Kunci</th>
+                  <th>Identitas Unsur</th>
+                  <th>Nomor Atom (Z / Proton)</th>
+                  <th>Nomor Massa (A)</th>
+                  <th>Jumlah Neutron (A - Z)</th>
+                  <th>Jumlah Elektron (e)</th>
+                  <th>Sifat Kimiawi</th>
+                  <th>Contoh Pasangan Nyata</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td><strong style="color:var(--neon-cyan)">Isotop</strong></td>
+                  <td><span class="badge badge-cyan">P</span> Akhir = Proton</td>
+                  <td><span class="status-tag status-same">SAMA</span></td>
+                  <td><strong style="color:var(--neon-cyan)">SAMA</strong></td>
+                  <td><span style="color:var(--neon-crimson)">BERBEDA</span></td>
+                  <td><span style="color:var(--neon-crimson)">BERBEDA</span></td>
+                  <td><span style="color:var(--neon-cyan)">SAMA (atom netral)</span></td>
+                  <td>Identik / Sama</td>
+                  <td><code>¹²₆C, ¹³₆C, ¹⁴₆C</code></td>
+                </tr>
+                <tr>
+                  <td><strong style="color:var(--neon-purple)">Isobar</strong></td>
+                  <td><span class="badge badge-purple">BAR</span> = Berat (Massa)</td>
+                  <td><span class="status-tag status-diff">BERBEDA</span></td>
+                  <td><span style="color:var(--neon-crimson)">BERBEDA</span></td>
+                  <td><strong style="color:var(--neon-purple)">SAMA</strong></td>
+                  <td><span style="color:var(--neon-crimson)">BERBEDA</span></td>
+                  <td><span style="color:var(--neon-crimson)">BERBEDA</span></td>
+                  <td>Sangat Berbeda</td>
+                  <td><code>¹⁴₆C dan ¹⁴₇N</code></td>
+                </tr>
+                <tr>
+                  <td><strong style="color:var(--neon-amber)">Isoton</strong></td>
+                  <td><span class="badge badge-amber">N</span> Akhir = Neutron</td>
+                  <td><span class="status-tag status-diff">BERBEDA</span></td>
+                  <td><span style="color:var(--neon-crimson)">BERBEDA</span></td>
+                  <td><span style="color:var(--neon-crimson)">BERBEDA</span></td>
+                  <td><strong style="color:var(--neon-amber)">SAMA</strong></td>
+                  <td><span style="color:var(--neon-crimson)">BERBEDA</span></td>
+                  <td>Berbeda</td>
+                  <td><code>¹⁴₆C dan ¹⁶₈O (n=8)</code></td>
+                </tr>
+                <tr>
+                  <td><strong style="color:var(--neon-emerald)">Isoelektron</strong></td>
+                  <td><span class="badge badge-emerald">e⁻</span> = Elektron Total</td>
+                  <td><span class="status-tag status-diff">BERBEDA / SAMA</span></td>
+                  <td><span style="color:var(--neon-crimson)">BERBEDA</span></td>
+                  <td>Bebas / Berbeda</td>
+                  <td>Bebas / Berbeda</td>
+                  <td><strong style="color:var(--neon-emerald)">SAMA PERSIS</strong></td>
+                  <td>Konfigurasi e⁻ Serupa</td>
+                  <td><code>₁₁Na⁺, ₁₀Ne, ₉F⁻ (10e)</code></td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+        <!-- 4 Detailed Curriculum Theory Cards -->
+        <div class="iso-deep-grid">
+          <!-- Card 1: Isotop & Massa Atom Relatif -->
+          <div class="iso-deep-card">
+            <div class="iso-deep-header" style="border-left-color: var(--neon-cyan);">
+              <div class="iso-deep-icon" style="background: rgba(0, 242, 254, 0.15); color: var(--neon-cyan);">⚛️</div>
+              <div>
+                <h4 class="iso-deep-title">1. Pendalaman Konsep Isotop & Massa Relatif (Ar)</h4>
+                <div class="iso-deep-sub">Kelimpahan Alamiah & Pemanfaatan Radioisotop</div>
+              </div>
+            </div>
+            <div class="iso-deep-body">
+              <p>
+                Mengapa massa atom pada tabel periodik sering berbentuk angka desimal (seperti Klorin = 35,5 sma atau Tembaga = 63,5 sma)? Hal ini disebabkan karena di alam suatu unsur ditemukan dalam bentuk <strong>campuran beberapa isotop</strong> dengan persentase kelimpahan tertentu.
+              </p>
+              <div class="iso-calc-box">
+                <div class="calc-box-title">📐 Rumus Menghitung Massa Atom Relatif (Ar):</div>
+                <div class="calc-box-formula">
+                  Ar = (%₁ × Massa₁) + (%₂ × Massa₂) + ... / 100%
+                </div>
+                <div class="calc-box-example">
+                  <strong>Contoh Nyata Klorin (Cl):</strong> <br>
+                  Di alam terdapat ~75% isotop ³⁵Cl (massa ~35 sma) dan ~25% isotop ³⁷Cl (massa ~37 sma). <br>
+                  Ar Cl = (75 × 35 + 25 × 37) / 100 = (2625 + 925) / 100 = <strong>35,5 sma</strong>.
+                </div>
+              </div>
+              <div class="iso-app-list">
+                <div class="app-item">
+                  <span class="app-badge">Medis & Kesehatan</span>
+                  <span><strong>Iodium-131 (¹³¹I):</strong> Terapi dan pemindaian kelenjar tiroid. <strong>Kobalt-60 (⁶⁰Co):</strong> Radioterapi pembasmi sel kanker.</span>
+                </div>
+                <div class="app-item">
+                  <span class="app-badge">Arkeologi</span>
+                  <span><strong>Karbon-14 (¹⁴C):</strong> Menentukan umur fosil dan artefak sejarah purbakala melalui metode peluruhan radiokarbon (radiocarbon dating).</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Card 2: Isobar -->
+          <div class="iso-deep-card">
+            <div class="iso-deep-header" style="border-left-color: var(--neon-purple);">
+              <div class="iso-deep-icon" style="background: rgba(157, 78, 221, 0.15); color: var(--neon-purple);">⚖️</div>
+              <div>
+                <h4 class="iso-deep-title">2. Pendalaman Konsep Isobar</h4>
+                <div class="iso-deep-sub">Massa Sama dengan Karakteristik Kimia yang Berseberangan</div>
+              </div>
+            </div>
+            <div class="iso-deep-body">
+              <p>
+                Isobar terjadi ketika dua unsur yang sama sekali berbeda kebetulan memiliki jumlah total nukleon (proton + neutron) yang identik. Karena nomor atomnya berbeda, unsur isobar terletak pada <strong>golongan dan periode yang berbeda</strong> dalam tabel periodik!
+              </p>
+              <div class="iso-info-note">
+                <strong>💡 Asal Usul Isobar di Alam:</strong> <br>
+                Isobar sering kali terbentuk melalui <em>peluruhan radioaktif beta minus (β⁻)</em>. Di dalam inti radioaktif, sebuah neutron meluruh menjadi proton dengan melepaskan elektron berenergi tinggi:
+                <br>
+                <code style="display:inline-block; margin-top:6px; color:var(--neon-purple); background:rgba(0,0,0,0.3); padding:4px 10px; border-radius:4px;">¹⁴₆C ➔ ¹⁴₇N + ₋₁⁰β (sinar beta)</code>
+                <br>
+                Jumlah proton bertambah dari 6 menjadi 7 (menjadi unsur Nitrogen), tetapi massa totalnya tetap bernilai 14.
+              </div>
+              <div class="iso-examples-grid">
+                <div class="iso-ex-card">
+                  <div class="ex-card-title">¹⁴₆C dan ¹⁴₇N</div>
+                  <div class="ex-card-desc">Keduanya bermassa 14. Karbon adalah nonlogam padat tetravalen, sedangkan Nitrogen adalah gas diatomik penyusun udara.</div>
+                </div>
+                <div class="iso-ex-card">
+                  <div class="ex-card-title">⁴⁰₁₈Ar, ⁴⁰₁₉K, dan ⁴⁰₂₀Ca</div>
+                  <div class="ex-card-desc">Ketiganya memiliki massa A = 40. Argon adalah gas mulia inert, Kalium adalah logam alkali sangat reaktif, dan Kalsium adalah logam alkali tanah.</div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Card 3: Isoton -->
+          <div class="iso-deep-card">
+            <div class="iso-deep-header" style="border-left-color: var(--neon-amber);">
+              <div class="iso-deep-icon" style="background: rgba(255, 209, 102, 0.15); color: var(--neon-amber);">🔵</div>
+              <div>
+                <h4 class="iso-deep-title">3. Pendalaman Konsep Isoton</h4>
+                <div class="iso-deep-sub">Kesamaan Jumlah Neutron & Kestabilan Inti Atom</div>
+              </div>
+            </div>
+            <div class="iso-deep-body">
+              <p>
+                Neutron di dalam inti atom berfungsi sebagai 'perekat' yang menetralkan gaya tolak-menolak Coulomb elektrostatik antarproton melalui <em>Gaya Nuklir Kuat</em>. Dua nuklida disebut isoton bila selisih nomor massa dan nomor atomnya bernilai sama: <strong>n = A - Z</strong>.
+              </p>
+              <div class="iso-calc-box">
+                <div class="calc-box-title">📐 Contoh Analisis Isoton:</div>
+                <div class="calc-box-formula">
+                  ¹⁴₆C : n = 14 - 6 = 8 neutron  |  ¹⁶₈O : n = 16 - 8 = 8 neutron (Isoton!)
+                </div>
+                <div class="calc-box-formula" style="margin-top:8px;">
+                  ³¹₁₅P : n = 31 - 15 = 16 neutron | ³²₁₆S : n = 32 - 16 = 16 neutron (Isoton!)
+                </div>
+              </div>
+              <p style="font-size:0.9rem; color:var(--text-secondary); margin-top:12px;">
+                Dalam fisika inti, neutron dengan jumlah tertentu yang disebut <em>bilangan ajaib (magic numbers)</em> seperti 2, 8, 20, 28, 50, 82, dan 126 memberikan kestabilan inti atom yang luar biasa tinggi terhadap peluruhan radioaktif.
+              </p>
+            </div>
+          </div>
+
+          <!-- Card 4: Isoelektron -->
+          <div class="iso-deep-card">
+            <div class="iso-deep-header" style="border-left-color: var(--neon-emerald);">
+              <div class="iso-deep-icon" style="background: rgba(6, 214, 160, 0.15); color: var(--neon-emerald);">⚡</div>
+              <div>
+                <h4 class="iso-deep-title">4. Pendalaman Konsep Isoelektron</h4>
+                <div class="iso-deep-sub">Deret Isoelektronik & Hukum Tren Jari-Jari Ion</div>
+              </div>
+            </div>
+            <div class="iso-deep-body">
+              <p>
+                Atom-atom cenderung melepas elektron (membentuk kation positif) atau menyerap elektron (membentuk anion negatif) demi mencapai kestabilan konfigurasi gas mulia (oktet 8 elektron valensi). Kumpulan atom dan ion dengan jumlah elektron sama ini dinamakan <strong>Deret Isoelektronik</strong>.
+              </p>
+              
+              <div class="iso-series-box">
+                <div class="series-title">🌟 Deret Isoelektronik 10 Elektron (Mirip Gas Mulia Neon ₁₀Ne):</div>
+                <div class="series-pills-wrap">
+                  <div class="series-pill"><span>₇N³⁻</span><small>7 - (-3) = 10e</small></div>
+                  <div class="series-pill"><span>₈O²⁻</span><small>8 - (-2) = 10e</small></div>
+                  <div class="series-pill"><span>₉F⁻</span><small>9 - (-1) = 10e</small></div>
+                  <div class="series-pill"><span>₁₀Ne</span><small>10 - 0 = 10e</small></div>
+                  <div class="series-pill"><span>₁₁Na⁺</span><small>11 - 1 = 10e</small></div>
+                  <div class="series-pill"><span>₁₂Mg²⁺</span><small>12 - 2 = 10e</small></div>
+                  <div class="series-pill"><span>₁₃Al³⁺</span><small>13 - 3 = 10e</small></div>
+                </div>
+              </div>
+
+              <div class="utbk-gold-box">
+                <div class="utbk-badge">🏆 KAIDAH EMAS SOAL UTBK & OLIMPIADE:</div>
+                <p>
+                  Pada spesi isoelektronik (jumlah elektron sama persis), <strong>semakin BESAR nomor atom Z (jumlah proton inti semakin banyak)</strong>, maka <strong>gaya tarik inti terhadap elektron semakin kuat</strong>, sehingga <strong>JARI-JARI ION SEMAKIN KECIL</strong>!
+                </p>
+                <div class="utbk-radius-order">
+                  Urutan Jari-jari Ion: <br>
+                  <code>r(N³⁻) &gt; r(O²⁻) &gt; r(F⁻) &gt; r(Ne) &gt; r(Na⁺) &gt; r(Mg²⁺) &gt; r(Al³⁺)</code>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- ==========================================
+             INTERACTIVE LAB: SPESIES COMPARATOR & CLASSIFIER
+             ========================================== -->
+        <div class="comparator-card" id="speciesComparator">
+          <div class="comparator-header">
+            <div>
+              <span class="badge badge-cyan">🔬 Laboratorium Interaktif</span>
+              <h3 class="comparator-title">Komparator & Detektor Hubungan Pasangan Spesi</h3>
+              <p class="comparator-desc">
+                Pilih salah satu tombol preset cepat atau ubah nilai nomor atom (Z), nomor massa (A), dan muatan ion (q) secara manual untuk membuktikan hubungan antara kedua spesi secara real-time!
+              </p>
+            </div>
+          </div>
+
+          <!-- Preset Quick Buttons -->
+          <div class="comparator-presets-wrap">
+            <span class="presets-label">⚡ Uji Pasangan Populer (1-Klik):</span>
+            <div class="comparator-presets-list" id="comparatorPresetsList">
+              <!-- Populated dynamically via JS -->
+            </div>
+          </div>
+
+          <!-- Dual Species Interactive Arena -->
+          <div class="comparator-arena">
+            <!-- Species 1 -->
+            <div class="comparator-species-card" id="compCard1">
+              <div class="species-card-tag" style="background: rgba(0, 242, 254, 0.15); color: var(--neon-cyan);">
+                Spesi Kimia 1
+              </div>
+
+              <!-- Visual Symbol Display -->
+              <div class="comp-visual-symbol">
+                <div class="nuclide-stack">
+                  <span class="nuclide-mass-val" id="comp1MassDisplay">12</span>
+                  <span class="nuclide-atomic-val" id="comp1AtomicDisplay">6</span>
+                </div>
+                <span class="nuclide-element-symbol" id="comp1SymbolDisplay">C</span>
+                <span class="nuclide-charge-val" id="comp1ChargeDisplay"></span>
+              </div>
+
+              <!-- Particle Counters -->
+              <div class="comp-counters-row">
+                <div class="comp-counter p-counter" id="comp1ProtonBox">
+                  <span class="counter-num" id="comp1Protons">6</span>
+                  <span class="counter-lbl">Proton (p)</span>
+                </div>
+                <div class="comp-counter n-counter" id="comp1NeutronBox">
+                  <span class="counter-num" id="comp1Neutrons">6</span>
+                  <span class="counter-lbl">Neutron (n)</span>
+                </div>
+                <div class="comp-counter e-counter" id="comp1ElectronBox">
+                  <span class="counter-num" id="comp1Electrons">6</span>
+                  <span class="counter-lbl">Elektron (e)</span>
+                </div>
+              </div>
+
+              <!-- Inputs -->
+              <div class="comp-controls">
+                <div class="input-field-group">
+                  <label for="comp1Select">Unsur Kimia:</label>
+                  <select id="comp1Select"></select>
+                </div>
+                <div style="display:grid; grid-template-columns:1fr 1fr; gap:10px;">
+                  <div class="input-field-group">
+                    <label for="comp1MassInput">Massa (A):</label>
+                    <input type="number" id="comp1MassInput" value="12" min="1" max="100">
+                  </div>
+                  <div class="input-field-group">
+                    <label for="comp1ChargeSelect">Muatan (q):</label>
+                    <select id="comp1ChargeSelect">
+                      <option value="0" selected>0 (Netral)</option>
+                      <option value="1">+1</option>
+                      <option value="2">+2</option>
+                      <option value="3">+3</option>
+                      <option value="-1">-1</option>
+                      <option value="-2">-2</option>
+                      <option value="-3">-3</option>
+                    </select>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- VS Connector & Verdict Center -->
+            <div class="comparator-vs-col">
+              <div class="comparator-vs-badge">VS</div>
+              <div class="comparator-verdict-box" id="comparatorVerdictBox">
+                <!-- Dynamically generated verdict badge & status -->
+              </div>
+            </div>
+
+            <!-- Species 2 -->
+            <div class="comparator-species-card" id="compCard2">
+              <div class="species-card-tag" style="background: rgba(157, 78, 221, 0.15); color: var(--neon-purple);">
+                Spesi Kimia 2
+              </div>
+
+              <!-- Visual Symbol Display -->
+              <div class="comp-visual-symbol">
+                <div class="nuclide-stack">
+                  <span class="nuclide-mass-val" id="comp2MassDisplay">14</span>
+                  <span class="nuclide-atomic-val" id="comp2AtomicDisplay">6</span>
+                </div>
+                <span class="nuclide-element-symbol" id="comp2SymbolDisplay">C</span>
+                <span class="nuclide-charge-val" id="comp2ChargeDisplay"></span>
+              </div>
+
+              <!-- Particle Counters -->
+              <div class="comp-counters-row">
+                <div class="comp-counter p-counter" id="comp2ProtonBox">
+                  <span class="counter-num" id="comp2Protons">6</span>
+                  <span class="counter-lbl">Proton (p)</span>
+                </div>
+                <div class="comp-counter n-counter" id="comp2NeutronBox">
+                  <span class="counter-num" id="comp2Neutrons">8</span>
+                  <span class="counter-lbl">Neutron (n)</span>
+                </div>
+                <div class="comp-counter e-counter" id="comp2ElectronBox">
+                  <span class="counter-num" id="comp2Electrons">6</span>
+                  <span class="counter-lbl">Elektron (e)</span>
+                </div>
+              </div>
+
+              <!-- Inputs -->
+              <div class="comp-controls">
+                <div class="input-field-group">
+                  <label for="comp2Select">Unsur Kimia:</label>
+                  <select id="comp2Select"></select>
+                </div>
+                <div style="display:grid; grid-template-columns:1fr 1fr; gap:10px;">
+                  <div class="input-field-group">
+                    <label for="comp2MassInput">Massa (A):</label>
+                    <input type="number" id="comp2MassInput" value="14" min="1" max="100">
+                  </div>
+                  <div class="input-field-group">
+                    <label for="comp2ChargeSelect">Muatan (q):</label>
+                    <select id="comp2ChargeSelect">
+                      <option value="0" selected>0 (Netral)</option>
+                      <option value="1">+1</option>
+                      <option value="2">+2</option>
+                      <option value="3">+3</option>
+                      <option value="-1">-1</option>
+                      <option value="-2">-2</option>
+                      <option value="-3">-3</option>
+                    </select>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Step-by-Step Proof & Mathematical Breakdown -->
+          <div class="comparator-proof-box" id="comparatorProofBox">
+            <!-- Rendered via JS -->
+          </div>
+        </div>
+
+        <!-- ==========================================
+             INTERACTIVE MINI SELF-CHECK QUIZ
+             ========================================== -->
+        <div class="iso-mini-quiz-card">
+          <div class="mini-quiz-header">
+            <div>
+              <span class="badge badge-amber">🧠 Uji Pemahaman Kilat</span>
+              <h3 style="font-size: 1.35rem; font-weight: 800; color: #fff; margin-top: 4px;">
+                Kuis Mandiri: Isotop, Isobar, Isoton & Isoelektron
+              </h3>
+              <p style="font-size: 0.9rem; color: var(--text-secondary);">
+                Uji langsung pemahaman teorimu dengan 4 pertanyaan interaktif berikut!
+              </p>
+            </div>
+            <div class="mini-quiz-score-badge" id="miniQuizScoreBadge">Skor: 0 / 4</div>
+          </div>
+
+          <div class="mini-quiz-body" id="miniQuizContainer">
+            <!-- Dynamically populated via JS -->
+          </div>
+        </div>
+      </div>
+
+      <!-- TAB 5: KONFIGURASI ELEKTRON (BOHR & AUFBAU) -->
+      <div class="materi-tab-content" id="materi-konfigurasi">
+        <div class="config-explorer-card">
+          <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 16px; margin-bottom: 20px;">
+            <div>
+              <h3 style="font-size: 1.6rem; font-weight: 800; color: #fff;">
+                Generator Konfigurasi Elektron 36 Unsur
+              </h3>
+              <p style="font-size: 0.95rem; color: var(--text-secondary);">
+                Pilih unsur untuk melihat konfigurasi kulit Bohr (2n²), konfigurasi subkulit Aufbau, elektron valensi, serta letak periode & golongan.
+              </p>
+            </div>
+            <div class="input-field-group" style="min-width: 240px;">
+              <label for="configElementSelect">Pilih Unsur Kimia:</label>
+              <select id="configElementSelect">
+                <!-- Populated via JS -->
+              </select>
+            </div>
+          </div>
+
+          <div class="config-output-box">
+            <h4 style="font-size: 1rem; color: var(--neon-cyan); margin-bottom: 10px;">
+              1. Konfigurasi Kulit Bohr (Tingkat Energi Utama n):
+            </h4>
+            <div class="config-shells-visual" id="configBohrShells">
+              <!-- Rendered via JS -->
+            </div>
+
+            <h4 style="font-size: 1rem; color: var(--neon-amber); margin: 20px 0 10px;">
+              2. Konfigurasi Subkulit Berdasarkan Prinsip Aufbau:
+            </h4>
+            <div class="aufbau-subshell-str" id="configAufbauStr">[Ne] 3s² 3p⁵</div>
+
+            <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; margin-top: 24px;">
+              <div class="nuclide-res-card">
+                <div class="nuclide-res-num" style="color: var(--neon-amber);" id="configValence">7 e⁻</div>
+                <div class="nuclide-res-label">Elektron Valensi</div>
+              </div>
+              <div class="nuclide-res-card">
+                <div class="nuclide-res-num" style="color: var(--neon-cyan);" id="configGroup">Golongan VIIA</div>
+                <div class="nuclide-res-label">Golongan Unsur</div>
+              </div>
+              <div class="nuclide-res-card">
+                <div class="nuclide-res-num" style="color: var(--neon-purple);" id="configPeriod">Periode 3</div>
+                <div class="nuclide-res-label">Periode (Jumlah Kulit)</div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Bohr Shells & Quantum Orbitals Diagrams -->
+        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 24px; margin-top: 32px;">
+          <div class="infographic-banner-card">
+            <img src="assets/bohr_energy_shells.jpg" alt="Model Kulit Bohr K L M N dan Emisi Foton" loading="lazy">
+            <div class="infographic-caption">
+              <span><strong>Model Bohr:</strong> Kulit energi n=1..4 dan eksitasi foton</span>
+              <span class="badge badge-cyan">Kulit Bohr</span>
+            </div>
+          </div>
+          <div class="infographic-banner-card">
+            <img src="assets/quantum_orbitals.jpg" alt="Orbital Mekanika Kuantum s dan p" loading="lazy">
+            <div class="infographic-caption">
+              <span><strong>Mekanika Kuantum:</strong> Bentuk orbital 3D s (bola) dan p (balon)</span>
+              <span class="badge badge-purple">Orbital Kuantum</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==========================================
+       SECTION: ZONA GAMES & SIMULATOR
+       ========================================== -->
+  <section class="games-section" id="games">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag">Interaktif & Menyenangkan</span>
+        <h2 class="section-title">
+          Zona <span class="gradient-text">Games & Simulator</span> Atom
+        </h2>
+        <p class="section-desc">
+          Terapkan pemahaman kimiamu langsung lewat simulasi interaktif laboratorium virtual dan game arcade bertema partikel subatomik!
+        </p>
+      </div>
+
+      <!-- Games Hub Navigation Switcher -->
+      <div class="game-hub-tabs">
+        <div class="tabs-container">
+          <button class="tab-btn game-tab-btn active" data-game="build-atom" id="tabBtnBuildAtom">
+            🔬 Lab Simulator: Bangun Atom
+          </button>
+          <button class="tab-btn game-tab-btn" data-game="arcade-catcher" id="tabBtnArcade">
+            ⚡ Arcade: Quantum Electron Catcher
+          </button>
+          <button class="tab-btn game-tab-btn" data-game="nuclide-sorter" id="tabBtnSorter">
+            🃏 Tantangan Sortir Nuklida (60s)
+          </button>
+        </div>
+      </div>
+
+      <!-- GAME 1: SIMULATOR BANGUN ATOM (BUILD AN ATOM) -->
+      <div class="game-wrapper active" id="game-build-atom">
+        <div class="build-atom-arena">
+          <!-- Left: Canvas Stage & Particle Dispensers -->
+          <div class="sim-stage-col">
+            <div class="sim-canvas-container">
+              <div class="sim-hud-overlay">
+                <span class="sim-element-badge" id="simElementName">Karbon (C)</span>
+                <span class="sim-stability-tag stable" id="simStability">✓ Inti Atom Stabil</span>
+              </div>
+              <canvas id="simCanvas" class="sim-atom-canvas"></canvas>
+            </div>
+
+            <!-- Particle Dispensers (+/- Controls) -->
+            <div class="particle-dispensers-grid">
+              <!-- Proton Dispenser -->
+              <div class="particle-bucket">
+                <div class="bucket-header" style="color: var(--color-proton);">
+                  <span>🔴 Proton (p⁺)</span>
+                </div>
+                <div class="bucket-count" style="color: var(--color-proton);" id="pCount">6</div>
+                <div class="bucket-btns">
+                  <button class="btn-particle-ctrl" id="pMinus" title="Kurangi Proton">-1</button>
+                  <button class="btn-particle-ctrl" id="pPlus" title="Tambah Proton">+1</button>
+                </div>
+              </div>
+
+              <!-- Neutron Dispenser -->
+              <div class="particle-bucket">
+                <div class="bucket-header" style="color: var(--color-neutron);">
+                  <span>🔵 Neutron (n⁰)</span>
+                </div>
+                <div class="bucket-count" style="color: var(--color-neutron);" id="nCount">6</div>
+                <div class="bucket-btns">
+                  <button class="btn-particle-ctrl" id="nMinus" title="Kurangi Neutron">-1</button>
+                  <button class="btn-particle-ctrl" id="nPlus" title="Tambah Neutron">+1</button>
+                </div>
+              </div>
+
+              <!-- Electron Dispenser -->
+              <div class="particle-bucket">
+                <div class="bucket-header" style="color: var(--color-electron);">
+                  <span>🟡 Elektron (e⁻)</span>
+                </div>
+                <div class="bucket-count" style="color: var(--color-electron);" id="eCount">6</div>
+                <div class="bucket-btns">
+                  <button class="btn-particle-ctrl" id="eMinus" title="Kurangi Elektron">-1</button>
+                  <button class="btn-particle-ctrl" id="ePlus" title="Tambah Elektron">+1</button>
+                </div>
+              </div>
+            </div>
+
+            <!-- Quick Presets -->
+            <div style="display: flex; gap: 10px; flex-wrap: wrap;">
+              <button class="btn btn-secondary btn-sm" id="presetNeutralC">Isotop Karbon-12</button>
+              <button class="btn btn-secondary btn-sm" id="presetCationNa">Kation Na⁺</button>
+              <button class="btn btn-secondary btn-sm" id="presetAnionO">Anion O²⁻</button>
+              <button class="btn btn-secondary btn-sm" id="btnResetAtom" style="margin-left: auto; color: var(--neon-crimson);">Reset Ulang 🔄</button>
+            </div>
+          </div>
+
+          <!-- Right: Inspector Dashboard & Challenges -->
+          <div class="sim-inspector-col">
+            <!-- Live Notation Box -->
+            <div class="sim-card-box">
+              <div class="sim-box-title">🏷️ Lambang Notasi Real-Time</div>
+              <div class="sim-live-symbol">
+                <div class="sim-symbol-nums">
+                  <span style="color: var(--neon-cyan);" id="simMassNum">12</span>
+                  <span style="color: var(--neon-purple);" id="simAtomicNum">6</span>
+                </div>
+                <span class="sim-symbol-char" id="simSymbolChar">C</span>
+                <span class="sim-symbol-charge" id="simChargeVal"></span>
+              </div>
+              <div style="margin-top: 14px; text-align: center;">
+                <span id="simNetCharge" class="sim-element-badge">Atom Netral (Muatan: 0)</span>
+              </div>
+            </div>
+
+            <!-- Challenge Level Card -->
+            <div class="sim-challenge-card">
+              <div class="challenge-header">
+                <span class="badge badge-amber" id="challengeLevelBadge">Level 1/5</span>
+                <span style="font-size: 0.8rem; color: var(--text-muted);">Misi Laboratorium</span>
+              </div>
+              <h4 class="challenge-target-text" id="challengeTitle">Tantangan 1: Helium Netral</h4>
+              <p style="font-size: 0.88rem; color: var(--text-secondary); margin-bottom: 16px;" id="challengeDesc">
+                Rakitlah atom Helium-4 netral (⁴₂He) yang stabil!
+              </p>
+              <button class="btn btn-cyan challenge-btn-check" id="btnCheckChallenge">
+                Verifikasi Rakitan Atom ✨
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- GAME 2: QUANTUM ELECTRON CATCHER ARCADE -->
+      <div class="game-wrapper" id="game-arcade-catcher">
+        <div class="arcade-game-container">
+          <!-- Game HUD -->
+          <div class="arcade-hud">
+            <div class="arcade-hud-item">
+              <span class="arcade-hud-label">Skor</span>
+              <span class="arcade-hud-val" id="arcadeScore">0</span>
+            </div>
+            <div class="arcade-hud-item">
+              <span class="arcade-hud-label">Rekor Tertinggi</span>
+              <span class="arcade-hud-val" style="color: var(--neon-amber);" id="arcadeHighScore">0</span>
+            </div>
+            <div class="arcade-hud-item">
+              <span class="arcade-hud-label">Kombo</span>
+              <span class="arcade-hud-val" style="color: var(--neon-purple);" id="arcadeCombo">0x</span>
+            </div>
+            <div class="arcade-hud-item">
+              <span class="arcade-hud-label">Nyawa</span>
+              <span class="arcade-hud-val" id="arcadeLives">❤️❤️❤️</span>
+            </div>
+          </div>
+
+          <!-- Game Canvas Area -->
+          <div class="arcade-canvas-wrap">
+            <canvas id="arcadeCanvas" class="arcade-game-canvas"></canvas>
+
+            <!-- Start Screen Overlay -->
+            <div class="arcade-screen-overlay" id="arcadeStartScreen">
+              <div style="font-size: 3.5rem; margin-bottom: 12px;">⚡</div>
+              <h3 class="arcade-title">Quantum Electron Catcher</h3>
+              <p class="arcade-instructions">
+                Arahkan cincin elektromagnetik menggunakan kursor mouse atau sentuhan jarimu untuk menangkap elektron (🟡) yang masuk ke orbit! Hindari partikel antimateri dan sinar kosmik (🔴) agar tidak kehilangan nyawa.
+              </p>
+              <button class="btn btn-primary btn-lg" id="btnStartArcade">Mulai Mainkan Sekarang 🚀</button>
+            </div>
+
+            <!-- Game Over Screen Overlay -->
+            <div class="arcade-screen-overlay hidden" id="arcadeGameOverScreen">
+              <div style="font-size: 3.5rem; margin-bottom: 12px;">💥</div>
+              <h3 class="arcade-title">Stabilitas Kuantum Runtuh!</h3>
+              <p class="arcade-instructions">
+                Permainan Berakhir! Skor yang berhasil kamu kumpulkan: <br>
+                <strong style="font-size: 2rem; color: var(--neon-cyan);" id="arcadeFinalScore">0</strong> Poin
+              </p>
+              <button class="btn btn-cyan btn-lg" id="btnRestartArcade">Main Lagi 🔄</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- GAME 3: SORTIR CEPAT NUKLIDA (ISOTOP, ISOBAR, ISOTON) -->
+      <div class="game-wrapper" id="game-nuclide-sorter">
+        <div class="sorter-game-container">
+          <!-- Start Screen -->
+          <div id="sorterStartCard">
+            <div style="font-size: 3.5rem; margin-bottom: 16px;">🃏</div>
+            <h3 class="section-title" id="sorterIntroTitle" style="font-size: 2rem;">Tantangan Sortir Kilat Nuklida</h3>
+            <p style="color: var(--text-secondary); max-width: 520px; margin: 0 auto 28px;">
+              Uji kecepatan analisismu! Dalam waktu 60 detik, tentukan apakah pasangan nuklida yang muncul merupakan <strong>Isotop</strong>, <strong>Isobar</strong>, atau <strong>Isoton</strong>. Raih skor dan kombo setinggi mungkin!
+            </p>
+            <button class="btn btn-primary btn-lg" id="btnStartSorter">Mulai Tantangan 60 Detik ⏱️</button>
+          </div>
+
+          <!-- Active Game Screen -->
+          <div id="sorterPlayCard" class="hidden">
+            <div class="sorter-hud">
+              <div>
+                <div style="font-size: 0.8rem; color: var(--text-muted);">Sisa Waktu</div>
+                <div style="font-size: 1.8rem; font-weight: 800; color: var(--neon-crimson); font-family: var(--font-mono);" id="sorterTimer">60s</div>
+              </div>
+              <div>
+                <div style="font-size: 0.8rem; color: var(--text-muted);">Skor Poin</div>
+                <div style="font-size: 1.8rem; font-weight: 800; color: var(--neon-cyan); font-family: var(--font-mono);" id="sorterScore">0</div>
+              </div>
+              <div>
+                <div style="font-size: 0.8rem; color: var(--text-muted);">Kombo Streak</div>
+                <div style="font-size: 1.8rem; font-weight: 800; color: var(--neon-amber); font-family: var(--font-mono);" id="sorterStreak">0x</div>
+              </div>
+            </div>
+
+            <div class="sorter-card-arena">
+              <div class="nuclide-pair-badge" id="sorterNuclide1">
+                <!-- Rendered via JS -->
+              </div>
+              <div style="font-size: 1.5rem; font-weight: 800; color: var(--text-muted);">VS</div>
+              <div class="nuclide-pair-badge" id="sorterNuclide2">
+                <!-- Rendered via JS -->
+              </div>
+            </div>
+
+            <div id="sorterFeedbackNote" style="min-height: 28px; font-size: 0.95rem; margin-bottom: 20px;"></div>
+
+            <div class="sorter-buttons-grid">
+              <button class="sorter-btn sorter-choice-btn" data-choice="isotop">
+                Isotop (Z sama)
+              </button>
+              <button class="sorter-btn sorter-choice-btn" data-choice="isobar">
+                Isobar (A sama)
+              </button>
+              <button class="sorter-btn sorter-choice-btn" data-choice="isoton">
+                Isoton (Neutron sama)
+              </button>
+              <button class="sorter-btn sorter-choice-btn" data-choice="isoelektron">
+                Isoelektron (e⁻ sama)
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==========================================
+       SECTION: VIDEO PEMBELAJARAN
+       ========================================== -->
+  <section class="video-section" id="video">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag">Audio Visual Edukasi</span>
+        <h2 class="section-title">
+          Video Pembelajaran <span class="gradient-text">Pilihan Guru</span>
+        </h2>
+        <p class="section-desc">
+          Saksikan penjelasan audiovisual terstruktur tentang sejarah penemuan atom, eksperimen hamburan sinar alfa, dan trik cepat konfigurasi elektron.
+        </p>
+      </div>
+
+      <div class="video-theater-wrapper">
+        <!-- Main Video Frame -->
+        <div class="video-player-container">
+          <div class="video-frame-box">
+            <iframe id="videoFrame" src="https://www.youtube.com/embed/cK7p99K96sM" title="Video Pembelajaran Struktur Atom Kimia SMA Kelas X" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+          </div>
+          <div class="video-meta-bar">
+            <h3 class="video-current-title" id="currentVideoTitle">
+              Perkembangan Model Atom: Dalton hingga Mekanika Kuantum
+            </h3>
+            <span class="badge badge-cyan">Kualitas HD • Kurikulum SMA</span>
+          </div>
+        </div>
+
+        <!-- Video Playlist & Key Takeaways Sidebar -->
+        <div class="video-sidebar">
+          <!-- Playlist Box -->
+          <div class="playlist-card">
+            <div class="playlist-title">📺 Daftar Video Pembelajaran</div>
+            <div class="playlist-items">
+              <div class="playlist-item active" data-index="0">
+                <div class="playlist-thumb-icon">▶</div>
+                <div class="playlist-info">
+                  <div class="playlist-item-title">1. Perkembangan Model Atom (Dalton - Kuantum)</div>
+                  <div class="playlist-duration">⏱️ 12 Menit • Sejarah Sains</div>
+                </div>
+              </div>
+              <div class="playlist-item" data-index="1">
+                <div class="playlist-thumb-icon">▶</div>
+                <div class="playlist-info">
+                  <div class="playlist-item-title">2. Trik Cepat Menentukan Notasi Atom & Ion</div>
+                  <div class="playlist-duration">⏱️ 10 Menit • Perhitungan p, e, n</div>
+                </div>
+              </div>
+              <div class="playlist-item" data-index="2">
+                <div class="playlist-thumb-icon">▶</div>
+                <div class="playlist-info">
+                  <div class="playlist-item-title">3. Konfigurasi Elektron Bohr & Aturan Aufbau</div>
+                  <div class="playlist-duration">⏱️ 14 Menit • Kulit & Subkulit</div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Key Takeaways Note Box -->
+          <div class="video-notes-card">
+            <div class="notes-header">📝 Rangkuman Intisari Video:</div>
+            <ul class="notes-points-list" id="videoNotesList">
+              <li>Thomson membuktikan atom bukan partikel terkecil melalui penemuan elektron (sinar katoda).</li>
+              <li>Rutherford menemukan inti atom bermuatan positif lewat hamburan sinar alfa pada lempeng emas.</li>
+              <li>Bohr merumuskan konsep kulit energi terkuantisasi (K, L, M) dan transisi foton.</li>
+              <li>Mekanika Gelombang menyatakan posisi elektron sebagai probabilitas orbital 3D.</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==========================================
+       SECTION: KUIS INTERAKTIF & SERTIFIKAT
+       ========================================== -->
+  <section class="kuis-section" id="kuis">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag">Uji Kompetensi Mandiri</span>
+        <h2 class="section-title">
+          Arena Kuis & <span class="gradient-text">Sertifikat Digital</span>
+        </h2>
+        <p class="section-desc">
+          Uji pemahamanmu dengan 15 soal berstandar ujian kimia SMA Kelas X! Dapatkan nilai langsung, ulasan pembahasan mendalam, dan cetak sertifikat kelulusan resmimu.
+        </p>
+      </div>
+
+      <div class="quiz-main-container">
+        <!-- 1. Quiz Welcome & Mode Selector Card -->
+        <div class="quiz-welcome-card" id="quizWelcomeCard">
+          <div class="quiz-welcome-icon">🏆</div>
+          <h3 class="quiz-welcome-title">Uji Kompetensi Struktur Atom</h3>
+          <p class="quiz-welcome-desc">
+            Pilihlah mode yang kamu sukai sebelum memulai evaluasi belajar:
+          </p>
+
+          <div class="quiz-mode-select">
+            <div class="quiz-mode-card selected" data-mode="practice">
+              <span class="badge badge-cyan quiz-mode-badge">Rekomendasi Belajar</span>
+              <h4>Mode Latihan Santai</h4>
+              <p>Tanpa batas waktu. Pembahasan mendalam langsung muncul seketika setelah memilih jawaban.</p>
+            </div>
+            <div class="quiz-mode-card" data-mode="exam">
+              <span class="badge badge-purple quiz-mode-badge">Tantangan Ujian</span>
+              <h4>Mode Ujian Berwaktu</h4>
+              <p>Waktu 15 menit untuk 15 soal. Skor akhir, analisis persentase, dan sertifikat kelulusan.</p>
+            </div>
+          </div>
+
+          <button class="btn btn-primary btn-lg" id="btnStartQuiz">
+            Mulai Kuis Sekarang 🚀
+          </button>
+        </div>
+
+        <!-- 2. Active Quiz Arena Card -->
+        <div class="quiz-arena-card" id="quizArenaCard">
+          <div class="quiz-hud-bar">
+            <span class="quiz-progress-text" id="quizProgText">Soal 1 dari 15</span>
+            <div class="quiz-timer-box" id="quizTimerBox">
+              <span>⏱️</span>
+              <span id="quizTimerVal">15:00</span>
+            </div>
+          </div>
+
+          <!-- Progress bar -->
+          <div class="quiz-progress-track">
+            <div class="quiz-progress-fill" id="quizProgFill" style="width: 6.6%;"></div>
+          </div>
+
+          <!-- Question Prompt -->
+          <div class="quiz-question-box">
+            <div class="question-category" id="questionCategory">Model Atom</div>
+            <div class="question-text" id="questionText">
+              Memuat soal pertanyaan...
+            </div>
+          </div>
+
+          <!-- Options List -->
+          <div class="quiz-options-list" id="quizOptionsList">
+            <!-- Rendered via JS -->
+          </div>
+
+          <!-- Detailed Explanation Box (Mode Latihan) -->
+          <div class="quiz-explanation-box" id="quizExplanationBox">
+            <div class="explanation-title">💡 Pembahasan Konsep Lengkap:</div>
+            <div class="explanation-text" id="quizExplanationText"></div>
+          </div>
+
+          <!-- Bottom Actions -->
+          <div class="quiz-bottom-actions">
+            <button class="btn btn-cyan btn-lg" id="btnNextQuestion" disabled>
+              Soal Berikutnya ➜
+            </button>
+          </div>
+        </div>
+
+        <!-- 3. Quiz Completion & Result Card -->
+        <div class="quiz-result-card" id="quizResultCard">
+          <div class="result-badge-icon" id="resBadgeIcon">👑</div>
+          <h3 class="section-title" id="resBadgeTitle" style="font-size: 2.2rem; margin-bottom: 8px;">
+            Pakar Struktur Atom!
+          </h3>
+          <p style="color: var(--text-secondary);">
+            Kamu telah menuntaskan seluruh 15 butir soal uji kompetensi Struktur Atom Kimia Kelas X.
+          </p>
+
+          <div class="result-score-circle">
+            <span class="score-big-num" id="resScoreNum">100</span>
+            <span class="score-max-sub">DARI 100</span>
+          </div>
+
+          <div class="result-stats-row">
+            <div class="result-stat-box">
+              <div class="result-stat-val" style="color: var(--neon-emerald);" id="resCorrectCount">15</div>
+              <div class="result-stat-lbl">Jawaban Benar</div>
+            </div>
+            <div class="result-stat-box">
+              <div class="result-stat-val" style="color: var(--neon-crimson);" id="resWrongCount">0</div>
+              <div class="result-stat-lbl">Jawaban Salah</div>
+            </div>
+            <div class="result-stat-box">
+              <div class="result-stat-val" style="color: var(--neon-cyan);" id="resAccuracy">100%</div>
+              <div class="result-stat-lbl">Akurasi</div>
+            </div>
+          </div>
+
+          <div class="result-actions">
+            <button class="btn btn-primary btn-lg" id="btnOpenCertModal">
+              🎓 Buat & Unduh Sertifikat Kelulusan
+            </button>
+            <button class="btn btn-secondary btn-lg" id="btnRestartQuiz">
+              Ulangi Kuis 🔄
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==========================================
+       MODAL: SERTIFIKAT KELULUSAN SISWA
+       ========================================== -->
+  <div class="modal-overlay" id="certModal">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h3 class="modal-title">🎓 Sertifikat Kelulusan Digital ATOMIKA X</h3>
+        <button class="modal-close-btn">&times;</button>
+      </div>
+      <div class="modal-body">
+        <div class="cert-form-row">
+          <div class="input-field-group" style="flex: 1;">
+            <label for="certStudentName">Nama Peserta Didik / Siswa:</label>
+            <input type="text" id="certStudentName" value="Arya Pratama" placeholder="Ketik nama lengkapmu">
+          </div>
+          <div class="input-field-group" style="flex: 1;">
+            <label for="certSchoolName">Asal Sekolah:</label>
+            <input type="text" id="certSchoolName" value="SMA Negeri 1 Jakarta" placeholder="Nama sekolah / kelas">
+          </div>
+          <button class="btn btn-cyan" id="btnGenerateCert" style="align-self: flex-end;">
+            Perbarui Sertifikat ✨
+          </button>
+        </div>
+
+        <div class="cert-canvas-wrap">
+          <canvas id="certCanvas"></canvas>
+        </div>
+
+        <div style="display: flex; justify-content: flex-end; gap: 12px; margin-top: 16px;">
+          <button class="btn btn-primary btn-lg" id="btnDownloadCert">
+            💾 Unduh Gambar Sertifikat (PNG)
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Toast Notification Container -->
+  <div class="toast-container" id="toastContainer"></div>
+
+  <!-- Footer -->
+  <footer style="background: var(--bg-secondary); border-top: 1px solid var(--border-subtle); padding: 40px 0; margin-top: 80px; text-align: center; color: var(--text-muted); font-size: 0.9rem;">
+    <div class="container">
+      <div style="font-weight: 800; font-size: 1.2rem; color: #fff; margin-bottom: 8px;">
+        ATOMIKA <span>X</span> • Media Pembelajaran Kimia Interaktif
+      </div>
+      <p style="margin-bottom: 12px;">
+        Dirancang khusus untuk Mata Pelajaran Kimia SMA Kelas X (Fase E) - Struktur Atom & Sistem Periodik Unsur.
+      </p>
+      <p style="font-size: 0.8rem;">
+        © 2026 Laboratorium Edukasi Kimia Modern • Mendukung Kurikulum Merdeka & K-13.
+      </p>
+    </div>
+  </footer>
+
+  <!-- JavaScript Modules -->
+  <script src="js/audio.js"></script>
+  <script src="js/fireworks.js"></script>
+  <script src="js/data-materi.js"></script>
+  <script src="js/data-kuis.js"></script>
+  <script src="js/atom3d.js"></script>
+  <script src="js/simulator-build-atom.js"></script>
+  <script src="js/game-quantum-catcher.js"></script>
+  <script src="js/game-sorter.js"></script>
+  <script src="js/quiz-engine.js"></script>
+  <script src="js/app.js"></script>
+</body>
+</html>

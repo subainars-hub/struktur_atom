@@ -1,0 +1,226 @@
+/* ===================================================================
+   ATOMIKA X - CSS DESIGN SYSTEM & CORE STYLES
+   Mata Pelajaran: Kimia Kelas X SMA - Struktur Atom
+   =================================================================== */
+
+:root {
+  /* Color Palette - Quantum Cyber Chemistry */
+  --bg-primary: #0a0e17;
+  --bg-secondary: #111827;
+  --bg-tertiary: #1a2234;
+  --bg-card: rgba(17, 24, 39, 0.75);
+  --bg-card-hover: rgba(26, 34, 52, 0.85);
+  --bg-glass: rgba(17, 24, 39, 0.6);
+
+  --border-subtle: rgba(255, 255, 255, 0.08);
+  --border-glow: rgba(0, 242, 254, 0.3);
+  --border-active: #00f2fe;
+
+  --text-primary: #f8fafc;
+  --text-secondary: #94a3b8;
+  --text-muted: #64748b;
+  --text-accent: #00f2fe;
+
+  /* Scientific Accent Colors */
+  --neon-cyan: #00f2fe;
+  --neon-blue: #4facfe;
+  --neon-purple: #9d4edd;
+  --neon-magenta: #e056fd;
+  --neon-amber: #ffd166;
+  --neon-emerald: #06d6a0;
+  --neon-crimson: #ff4757;
+
+  /* Subatomic Particle Colors */
+  --color-proton: #ff4757;    /* Red (+) */
+  --color-neutron: #4facfe;   /* Blue (0) */
+  --color-electron: #ffd166;  /* Gold/Yellow (-) */
+  --color-photon: #00f2fe;    /* Cyan Light */
+
+  /* Typography */
+  --font-sans: 'Outfit', 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+  --font-mono: 'JetBrains Mono', 'Fira Code', monospace;
+
+  /* Shadows & Glows */
+  --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.4);
+  --shadow-md: 0 4px 20px rgba(0, 0, 0, 0.5);
+  --shadow-lg: 0 10px 40px rgba(0, 0, 0, 0.6);
+  --glow-cyan: 0 0 25px rgba(0, 242, 254, 0.35);
+  --glow-purple: 0 0 25px rgba(157, 78, 221, 0.35);
+  --glow-amber: 0 0 25px rgba(255, 209, 102, 0.35);
+  --glow-red: 0 0 25px rgba(255, 71, 87, 0.35);
+
+  /* Transitions */
+  --transition-fast: 0.15s ease;
+  --transition-normal: 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  --transition-slow: 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+
+  /* Layout */
+  --container-max: 1280px;
+  --header-height: 72px;
+  --radius-sm: 8px;
+  --radius-md: 14px;
+  --radius-lg: 20px;
+  --radius-full: 9999px;
+}
+
+/* Light Theme Variables */
+[data-theme="light"] {
+  --bg-primary: #f0f4f8;
+  --bg-secondary: #ffffff;
+  --bg-tertiary: #e2e8f0;
+  --bg-card: rgba(255, 255, 255, 0.85);
+  --bg-card-hover: rgba(255, 255, 255, 0.95);
+  --bg-glass: rgba(255, 255, 255, 0.8);
+
+  --border-subtle: rgba(0, 0, 0, 0.08);
+  --border-glow: rgba(0, 114, 254, 0.3);
+  --border-active: #0072fe;
+
+  --text-primary: #0f172a;
+  --text-secondary: #475569;
+  --text-muted: #94a3b8;
+  --text-accent: #0072fe;
+
+  --neon-cyan: #0072fe;
+  --neon-blue: #2563eb;
+  --neon-purple: #7c3aed;
+  --neon-magenta: #c026d3;
+
+  --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.06);
+  --shadow-md: 0 8px 24px rgba(0, 0, 0, 0.08);
+  --shadow-lg: 0 16px 40px rgba(0, 0, 0, 0.12);
+  --glow-cyan: 0 4px 20px rgba(0, 114, 254, 0.2);
+  --glow-purple: 0 4px 20px rgba(124, 58, 237, 0.2);
+}
+
+/* Base Reset */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+  font-size: 16px;
+  color-scheme: dark;
+}
+
+body {
+  font-family: var(--font-sans);
+  background-color: var(--bg-primary);
+  color: var(--text-primary);
+  line-height: 1.6;
+  overflow-x: hidden;
+  position: relative;
+  min-height: 100vh;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* Background Cyber Grid & Particle Ambience */
+body::before {
+  content: '';
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-image: 
+    radial-gradient(circle at 15% 20%, rgba(79, 172, 254, 0.08) 0%, transparent 40%),
+    radial-gradient(circle at 85% 60%, rgba(157, 78, 221, 0.08) 0%, transparent 45%),
+    linear-gradient(rgba(255, 255, 255, 0.015) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.015) 1px, transparent 1px);
+  background-size: 100% 100%, 100% 100%, 48px 48px, 48px 48px;
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* Container */
+.container {
+  width: 100%;
+  max-width: var(--container-max);
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 24px;
+  padding-right: 24px;
+  position: relative;
+  z-index: 1;
+}
+
+/* Section Header Utility */
+.section-header {
+  text-align: center;
+  max-width: 760px;
+  margin: 0 auto 48px;
+}
+
+.section-tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 6px 16px;
+  background: rgba(0, 242, 254, 0.1);
+  border: 1px solid rgba(0, 242, 254, 0.3);
+  border-radius: var(--radius-full);
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--neon-cyan);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin-bottom: 16px;
+}
+
+.section-title {
+  font-size: 2.5rem;
+  font-weight: 800;
+  line-height: 1.2;
+  margin-bottom: 16px;
+  letter-spacing: -0.02em;
+}
+
+.section-title .gradient-text {
+  background: linear-gradient(135deg, var(--neon-cyan), var(--neon-blue), var(--neon-purple));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.section-desc {
+  font-size: 1.1rem;
+  color: var(--text-secondary);
+  line-height: 1.6;
+}
+
+/* Headings */
+h1, h2, h3, h4, h5, h6 {
+  font-weight: 700;
+  color: var(--text-primary);
+  line-height: 1.3;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+  transition: var(--transition-fast);
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* Global Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+::-webkit-scrollbar-track {
+  background: var(--bg-primary);
+}
+::-webkit-scrollbar-thumb {
+  background: var(--bg-tertiary);
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--neon-cyan);
+}

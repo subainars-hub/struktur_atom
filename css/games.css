@@ -1,0 +1,463 @@
+/* ===================================================================
+   ATOMIKA X - GAMES & INTERACTIVE SIMULATORS STYLES
+   =================================================================== */
+
+.games-section {
+  padding: 80px 0;
+  position: relative;
+}
+
+.game-hub-tabs {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 40px;
+}
+
+.game-wrapper {
+  display: none;
+  animation: fadeInGame 0.35s ease forwards;
+}
+
+.game-wrapper.active {
+  display: block;
+}
+
+@keyframes fadeInGame {
+  from { opacity: 0; transform: translateY(16px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* -------------------------------------------------------------
+   SIMULATOR: BANGUN ATOM (BUILD AN ATOM)
+   ------------------------------------------------------------- */
+.build-atom-arena {
+  display: grid;
+  grid-template-columns: 1.4fr 1fr;
+  gap: 28px;
+  background: var(--bg-card);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-lg);
+  padding: 32px;
+  box-shadow: var(--shadow-lg);
+}
+
+.sim-stage-col {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.sim-canvas-container {
+  width: 100%;
+  height: 480px;
+  background: radial-gradient(circle at center, rgba(22, 33, 56, 0.9) 0%, rgba(10, 14, 23, 0.98) 80%);
+  border: 1px solid var(--border-glow);
+  border-radius: var(--radius-lg);
+  position: relative;
+  overflow: hidden;
+  box-shadow: inset 0 0 30px rgba(0, 242, 254, 0.1);
+}
+
+.sim-atom-canvas {
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+
+.sim-hud-overlay {
+  position: absolute;
+  top: 16px;
+  left: 16px;
+  right: 16px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  pointer-events: none;
+}
+
+.sim-element-badge {
+  background: rgba(10, 14, 23, 0.85);
+  border: 1px solid var(--neon-cyan);
+  border-radius: var(--radius-full);
+  padding: 6px 16px;
+  font-size: 0.9rem;
+  font-weight: 700;
+  color: var(--neon-cyan);
+  box-shadow: var(--glow-cyan);
+}
+
+.sim-stability-tag {
+  background: rgba(10, 14, 23, 0.85);
+  border-radius: var(--radius-full);
+  padding: 6px 16px;
+  font-size: 0.85rem;
+  font-weight: 700;
+  border: 1px solid;
+}
+
+.sim-stability-tag.stable {
+  color: var(--neon-emerald);
+  border-color: var(--neon-emerald);
+}
+
+.sim-stability-tag.unstable {
+  color: var(--neon-crimson);
+  border-color: var(--neon-crimson);
+  animation: pulseWarning 1.5s infinite;
+}
+
+@keyframes pulseWarning {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.5; }
+}
+
+/* Particle Dispenser / Controls */
+.particle-dispensers-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+}
+
+.particle-bucket {
+  background: var(--bg-tertiary);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-md);
+  padding: 16px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+  text-align: center;
+}
+
+.bucket-header {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-weight: 700;
+  font-size: 0.95rem;
+}
+
+.bucket-count {
+  font-family: var(--font-mono);
+  font-size: 1.8rem;
+  font-weight: 800;
+}
+
+.bucket-btns {
+  display: flex;
+  gap: 8px;
+  width: 100%;
+}
+
+.btn-particle-ctrl {
+  flex: 1;
+  padding: 8px;
+  border-radius: var(--radius-sm);
+  border: 1px solid var(--border-subtle);
+  font-size: 1.1rem;
+  font-weight: 800;
+  cursor: pointer;
+  background: rgba(255, 255, 255, 0.05);
+  color: #fff;
+  transition: all var(--transition-fast);
+}
+
+.btn-particle-ctrl:hover {
+  background: rgba(255, 255, 255, 0.15);
+  border-color: var(--neon-cyan);
+}
+
+.btn-particle-ctrl:active {
+  transform: scale(0.95);
+}
+
+/* Dashboard / Inspector Col */
+.sim-inspector-col {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.sim-card-box {
+  background: var(--bg-tertiary);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-md);
+  padding: 20px;
+}
+
+.sim-box-title {
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: var(--text-secondary);
+  margin-bottom: 14px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+/* Notation Display */
+.sim-live-symbol {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 24px;
+  background: rgba(10, 14, 23, 0.6);
+  border-radius: var(--radius-md);
+  border: 1px solid var(--border-subtle);
+}
+
+.sim-symbol-nums {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  font-family: var(--font-mono);
+  font-size: 1.5rem;
+  font-weight: 800;
+}
+
+.sim-symbol-char {
+  font-size: 4rem;
+  font-weight: 900;
+  color: #fff;
+  line-height: 1;
+}
+
+.sim-symbol-charge {
+  align-self: flex-start;
+  font-family: var(--font-mono);
+  font-size: 1.5rem;
+  font-weight: 800;
+  color: var(--neon-amber);
+}
+
+/* Gauge Meters */
+.sim-gauge-row {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 8px;
+  font-size: 0.9rem;
+}
+
+.sim-gauge-bar {
+  width: 100%;
+  height: 8px;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 4px;
+  overflow: hidden;
+  margin-bottom: 16px;
+}
+
+.sim-gauge-fill {
+  height: 100%;
+  transition: width var(--transition-fast), background-color var(--transition-fast);
+}
+
+/* Challenge Mode Box */
+.sim-challenge-card {
+  background: linear-gradient(135deg, rgba(157, 78, 221, 0.15), rgba(79, 172, 254, 0.1));
+  border: 1px solid rgba(157, 78, 221, 0.4);
+  border-radius: var(--radius-md);
+  padding: 20px;
+}
+
+.challenge-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 12px;
+}
+
+.challenge-target-text {
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: #fff;
+  margin-bottom: 14px;
+}
+
+.challenge-btn-check {
+  width: 100%;
+}
+
+/* -------------------------------------------------------------
+   GAME 2: QUANTUM ELECTRON CATCHER ARCADE
+   ------------------------------------------------------------- */
+.arcade-game-container {
+  background: var(--bg-card);
+  border: 1px solid var(--border-glow);
+  border-radius: var(--radius-lg);
+  padding: 24px;
+  box-shadow: var(--shadow-lg), var(--glow-cyan);
+  position: relative;
+  max-width: 960px;
+  margin: 0 auto;
+}
+
+.arcade-hud {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 16px;
+  padding: 12px 20px;
+  background: var(--bg-tertiary);
+  border-radius: var(--radius-md);
+  border: 1px solid var(--border-subtle);
+}
+
+.arcade-hud-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.arcade-hud-label {
+  font-size: 0.75rem;
+  color: var(--text-muted);
+  text-transform: uppercase;
+  font-weight: 700;
+}
+
+.arcade-hud-val {
+  font-family: var(--font-mono);
+  font-size: 1.5rem;
+  font-weight: 800;
+  color: var(--neon-cyan);
+}
+
+.arcade-canvas-wrap {
+  position: relative;
+  width: 100%;
+  height: 520px;
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  background: #080c14;
+  border: 1px solid var(--border-subtle);
+}
+
+.arcade-game-canvas {
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+
+.arcade-screen-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(10, 14, 23, 0.92);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 32px;
+  text-align: center;
+  z-index: 20;
+}
+
+.arcade-screen-overlay.hidden {
+  display: none;
+}
+
+.arcade-title {
+  font-size: 2.4rem;
+  font-weight: 900;
+  color: #fff;
+  margin-bottom: 12px;
+}
+
+.arcade-instructions {
+  max-width: 500px;
+  color: var(--text-secondary);
+  font-size: 1rem;
+  line-height: 1.6;
+  margin-bottom: 24px;
+}
+
+/* -------------------------------------------------------------
+   GAME 3: SORTIR CEPAT NUKLIDA (ISOTOP, ISOBAR, ISOTON)
+   ------------------------------------------------------------- */
+.sorter-game-container {
+  max-width: 800px;
+  margin: 0 auto;
+  background: var(--bg-card);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-lg);
+  padding: 36px;
+  text-align: center;
+  box-shadow: var(--shadow-lg);
+}
+
+.sorter-hud {
+  display: flex;
+  justify-content: space-around;
+  margin-bottom: 32px;
+  padding: 16px;
+  background: var(--bg-tertiary);
+  border-radius: var(--radius-md);
+}
+
+.sorter-card-arena {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 32px;
+  margin-bottom: 36px;
+}
+
+.nuclide-pair-badge {
+  background: var(--bg-tertiary);
+  border: 2px solid var(--border-glow);
+  border-radius: var(--radius-md);
+  padding: 24px 32px;
+  box-shadow: var(--shadow-md);
+  font-family: var(--font-sans);
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  transform: scale(1.1);
+}
+
+.sorter-buttons-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 12px;
+  max-width: 780px;
+  margin: 0 auto;
+}
+
+.sorter-btn {
+  padding: 16px;
+  font-size: 1.1rem;
+  font-weight: 700;
+  border-radius: var(--radius-md);
+  border: 1px solid var(--border-subtle);
+  background: var(--bg-tertiary);
+  color: #fff;
+  cursor: pointer;
+  transition: all var(--transition-fast);
+}
+
+.sorter-btn:hover {
+  background: var(--bg-card-hover);
+  border-color: var(--neon-cyan);
+  transform: translateY(-2px);
+}
+
+@media (max-width: 992px) {
+  .build-atom-arena {
+    grid-template-columns: 1fr;
+  }
+  .particle-dispensers-grid {
+    grid-template-columns: 1fr;
+  }
+  .sorter-card-arena {
+    flex-direction: column;
+    gap: 16px;
+  }
+  .sorter-buttons-grid {
+    grid-template-columns: 1fr;
+  }
+}
